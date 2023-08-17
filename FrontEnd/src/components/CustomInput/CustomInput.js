@@ -1,8 +1,7 @@
 import React from 'react'
 import {View, Text, TextInput, StyleSheet} from 'react-native'
-import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace';
 
-const CustomInput = ({value, setValue, placeHolder}) => {
+const CustomInput = ({value, setValue, placeHolder, secureTextEntry}) => {
     return (
         <View style={styles.container}>
             <TextInput 
@@ -10,6 +9,7 @@ const CustomInput = ({value, setValue, placeHolder}) => {
                 onChangeText={setValue}
                 placeholder={placeHolder}
                 styles={styles.input} 
+                secureTextEntry={secureTextEntry}
                 />
         </View>
     );
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
 
         paddingHorizontal: 10,
-        marginVertical: 5,
+        marginVertical: 10,
     },
     input: {},
 });
