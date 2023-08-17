@@ -32,7 +32,7 @@ const SignInScreen =() => {
     };
 
     return(
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.root}>
                 <Image 
                 source={Logo} 
