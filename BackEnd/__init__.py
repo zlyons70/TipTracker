@@ -1,16 +1,16 @@
 '''Creates the flask server'''
 import os
-import tomllib
+import pprint
+from pymongo import MongoClient
+from dotenv import load_dotenv, find_dotenv
 from flask import Flask
-
-print(__file__)
-with open(os.path.join(os.path.dirname(__file__),"config.toml"), "rb") as file:
-    config = tomllib.load(file)
-
+load_dotenv(find_dotenv())
+mongo_key = os.environ.get('MONGO_KEY')
+connection_string = f"""mongodb+srv://zlyons70:{mongo_key}@tiptrackertest.idxtxp0.mongodb.net/"""
 def create_app():
     '''initializes the flask application'''
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = config['key']
+    app.config['SECRET_KEY'] = 
 
     from .views import views
     from .auth import auth
