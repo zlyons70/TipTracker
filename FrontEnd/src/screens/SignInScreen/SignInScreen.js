@@ -2,7 +2,8 @@ import React, {useState} from 'react'
 import {View, Text, Image, StyleSheet, useWindowDimensions, ScrollView} from 'react-native'
 import Logo from '../../../assets/images/logo/android-chrome-512x512.png'
 import CustomInput from '../../components/CustomInput/CustomInput';
-import CustomButton from '../../components/CustomButton/CustomButton';
+import CustomButton from '../../components/CustomButton';
+import SocialSignInButton from '../../components/SocialSignInButton';
 
 const SignInScreen =() => {
 
@@ -18,15 +19,6 @@ const SignInScreen =() => {
     const onForgotPasswordPressed = () => {
         console.warn('Forgot Password Pressed');
     };
-
-    const onSignInGoogle = () => {
-        console.warn('Sign In Google Pressed');
-    };
-
-    const onSignInApple = () => {
-        console.warn('Sign In Apple Pressed');
-    };
-
     const onSignUpPressed = () => {
         console.warn('Sign Up Pressed');
     };
@@ -64,19 +56,7 @@ const SignInScreen =() => {
                 type='TERTIARY'
                 />
 
-                <CustomButton 
-                text={'Google Sign In'}
-                onPress={onSignInGoogle}
-                bgColor={'#FAE9EA'}
-                fgColor={'red'}
-                />
-
-                <CustomButton 
-                text={'Apple Sign In'}
-                onPress={onSignInApple}
-                bgColor={'#e3e3e3'}
-                fgColor={'black'}
-                />
+                <SocialSignInButton />
 
                 <CustomButton 
                 text={"Don't have an account? Sign Up"}
