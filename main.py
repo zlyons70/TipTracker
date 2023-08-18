@@ -1,5 +1,5 @@
 '''This module is used to run the project'''
-from backend import create_app
+from BackEnd import create_app
 
 app = create_app()
 
