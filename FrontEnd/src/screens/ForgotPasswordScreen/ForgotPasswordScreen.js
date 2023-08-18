@@ -11,7 +11,7 @@ const ForgotPasswordScreen =() => {
 
 
     const onSendCodePressed = () => {
-        console.warn('onSendCodePressed');
+        navigation.navigate('NewPassword');
     };
 
     const onBackToSignInPressed = () => {
