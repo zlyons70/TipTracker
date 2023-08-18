@@ -68,7 +68,7 @@ const SignUpScreen =() => {
                 </Text>
 
                 <SocialSignInButton />
-                
+
                 <CustomButton 
                 text={"Already have an account? Sign In"}
                 onPress={onSignInPressed}
@@ -94,5 +94,5 @@ const styles = StyleSheet.create({
         color: "#FDB075",
 
     }
-})
-export default SignUpScreen
+});
+export default SignUpScreen;
