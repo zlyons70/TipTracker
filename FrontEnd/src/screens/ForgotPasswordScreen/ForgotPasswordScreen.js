@@ -2,11 +2,12 @@ import React, {useState} from 'react'
 import {View, Text, StyleSheet, useWindowDimensions, ScrollView} from 'react-native'
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
-import SocialSignInButton from '../../components/SocialSignInButton/SocialSignInButton';
+import { useNavigation } from '@react-navigation/native';
 
 const ForgotPasswordScreen =() => {
 
     const [username, setUsername] = useState('');
+    const navigation = useNavigation();
 
 
     const onSendCodePressed = () => {
@@ -14,7 +15,7 @@ const ForgotPasswordScreen =() => {
     };
 
     const onBackToSignInPressed = () => {
-        console.warn('onBackToSignInPressed');
+        navigation.navigate('SignIn');
     };
 
     return(

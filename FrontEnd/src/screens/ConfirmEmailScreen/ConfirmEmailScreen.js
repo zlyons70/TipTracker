@@ -3,18 +3,21 @@ import {View, Text, StyleSheet, useWindowDimensions, ScrollView} from 'react-nat
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import SocialSignInButton from '../../components/SocialSignInButton/SocialSignInButton';
+import { useNavigation } from '@react-navigation/native';
 
 const ConfirmEmailScreen =() => {
 
     const [code, setCode] = useState('');
 
+    const navigation = useNavigation();
+
 
     const onConfirmPressed = () => {
-        console.warn('onConfrimPressed');
+        navigation.navigate('Home');
     };
 
     const onBackToSignInPressed = () => {
-        console.warn('onBackToSignInPressed');
+        navigation.navigate('SignIn');
     };
 
     const onResendCodePressed = () => {
@@ -25,7 +28,7 @@ const ConfirmEmailScreen =() => {
     return(
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.root}>
-                <Text style = {styles.title}>Confrim Your Email</Text>
+                <Text style = {styles.title}>Confirm Your Email</Text>
 
                 <CustomInput 
                 placeHolder='Enter the code emailed to you' 
@@ -34,7 +37,7 @@ const ConfirmEmailScreen =() => {
                 />
 
                 <CustomButton 
-                text={'Confirmm'}
+                text={'Confirm'}
                 onPress={onConfirmPressed}
                 type='PRIMARY'
                 />

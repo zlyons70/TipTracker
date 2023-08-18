@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, useWindowDimensions, ScrollView} from 'react-nat
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import SocialSignInButton from '../../components/SocialSignInButton/SocialSignInButton';
+import { useNavigation } from '@react-navigation/native';
 
 const SignUpScreen =() => {
 
@@ -12,13 +13,15 @@ const SignUpScreen =() => {
     const [passwordConfirmation, setPasswordConfirmation] = useState('');
 
     const {height} = useWindowDimensions();
+    
+    const navigation = useNavigation();
 
     const onSignInPressed = () => {
-        console.warn('Sign In Pressed');
+        navigation.navigate('SignIn');
     };
 
     const onRegisterPressed = () => {
-        console.warn('onRegisterPressed');
+        navigation.navigate('ConfirmEmail');
     };
 
     const onTermsOfUsePressed = () => {
@@ -59,7 +62,6 @@ const SignUpScreen =() => {
                 <CustomButton 
                 text={'Create Account'}
                 onPress={onRegisterPressed}
-                secureTextEntry
                 />
                 <Text>By registering, you confirm that you accept our
                     <Text style = {styles.link} onPress={onTermsOfUsePressed}> Terms of Use </Text> 

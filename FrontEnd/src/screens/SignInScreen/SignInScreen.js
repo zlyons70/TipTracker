@@ -4,6 +4,7 @@ import Logo from '../../../assets/images/logo/android-chrome-512x512.png'
 import CustomInput from '../../components/CustomInput/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import SocialSignInButton from '../../components/SocialSignInButton';
+import { useNavigation } from '@react-navigation/native';
 
 const SignInScreen =() => {
 
@@ -11,16 +12,19 @@ const SignInScreen =() => {
     const [password, setPassword] = useState('');
 
     const {height} = useWindowDimensions();
+    const navigation = useNavigation();
 
     const onSignedInPressed = () => {
-        console.warn('Sign In Pressed');
+        // Validate the user
+        navigation.navigate('Home');
     };
 
     const onForgotPasswordPressed = () => {
-        console.warn('Forgot Password Pressed');
+        navigation.navigate('ForgotPassword');
     };
     const onSignUpPressed = () => {
         console.warn('Sign Up Pressed');
+        navigation.navigate('SignUp');
     };
 
     return(

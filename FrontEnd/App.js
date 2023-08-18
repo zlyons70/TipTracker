@@ -19,12 +19,13 @@ import SignUpScreen from './src/screens/SignUpScreen/SignUpScreen';
 import ConfirmEmailScreen from './src/screens/ConfirmEmailScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
 import NewPasswordScreen from './src/screens/NewPasswordScreen';
+import Navigation from './src/navigation';
 
 
 const App = () => {
   return (
     <SafeAreaView style={styles.root}>
-      <NewPasswordScreen />
+      <Navigation />
     </SafeAreaView>
   );
 }
