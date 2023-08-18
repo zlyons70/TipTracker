@@ -4,18 +4,20 @@ import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import SocialSignInButton from '../../components/SocialSignInButton/SocialSignInButton';
 
-const ForgotPasswordScreen =() => {
+const NewPasswordScreen =() => {
 
-    const [username, setUsername] = useState('');
+    const [code, setCode] = useState('');
+    const [newPassword, setNewPassword] = useState('');
 
 
-    const onSendCodePressed = () => {
-        console.warn('onSendCodePressed');
+    const onSubmitPressed = () => {
+        console.warn('onSubmitPressed');
     };
 
     const onBackToSignInPressed = () => {
         console.warn('onBackToSignInPressed');
     };
+
 
     return(
         <ScrollView showsVerticalScrollIndicator={false}>
@@ -23,14 +25,18 @@ const ForgotPasswordScreen =() => {
                 <Text style = {styles.title}>Reset your password</Text>
 
                 <CustomInput 
-                placeHolder='Username' 
-                value={username} 
-                setValue={setUsername}
+                placeHolder='New Password' 
+                value={code} 
+                setValue={setCode}
                 />
-
+                <CustomInput 
+                placeHolder='Enter your new password' 
+                value={newPassword} 
+                setValue={setNewPassword}
+                />
                 <CustomButton 
-                text={'Send'}
-                onPress={onSendCodePressed}
+                text={'Submit'}
+                onPress={onSubmitPressed}
                 type='PRIMARY'
                 />
                 <CustomButton 
@@ -59,4 +65,4 @@ const styles = StyleSheet.create({
 
     }
 });
-export default ForgotPasswordScreen;
+export default NewPasswordScreen;

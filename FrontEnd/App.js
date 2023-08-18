@@ -18,12 +18,13 @@ import SignInScreen from './src/screens/SignInScreen/';
 import SignUpScreen from './src/screens/SignUpScreen/SignUpScreen';
 import ConfirmEmailScreen from './src/screens/ConfirmEmailScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
+import NewPasswordScreen from './src/screens/NewPasswordScreen';
 
 
 const App = () => {
   return (
     <SafeAreaView style={styles.root}>
-      <ForgotPasswordScreen />
+      <NewPasswordScreen />
     </SafeAreaView>
   );
 }
